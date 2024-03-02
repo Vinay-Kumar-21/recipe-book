@@ -1,6 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Recipe({ recipes }) {
+
     return (
         <>
             <div className='bg-gray-100 flex m-2.5 '>
@@ -20,9 +22,17 @@ function Recipe({ recipes }) {
                     </div>
                 </div>
 
+                <div className='self-end ml-auto mb-2'>
+                    <Link to={`/recipedetails/${recipes.id}`}>
+                        <button className=' border border-solid bg-orange-400 border-black px-2 h-8 mr-2'>How to Make</button>
+                    </Link>
+
+                    <button className=' border border-solid bg-orange-400 border-black px-2 h-8'>Delete</button>
+                </div>
 
 
-            </div>
+
+            </div >
 
         </>
     )

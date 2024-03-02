@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 
 function Form({ setForm, setRecipeList, recipeList }) {
+    const { v4: uuidv4 } = require('uuid');
+
     const [formData, setFormData] = useState({});
     function handleSubmit(e) {
         e.preventDefault();
@@ -14,6 +16,7 @@ function Form({ setForm, setRecipeList, recipeList }) {
     function handleInputChange(e) {
         setFormData({
             ...formData,
+            id: uuidv4(),
             [e.target.name]: e.target.value
         })
     }

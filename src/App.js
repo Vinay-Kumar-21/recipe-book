@@ -12,7 +12,7 @@ function App() {
         </>}>
         </Route>
 
-        <Route path='/recipedetails' element={
+        <Route path='/recipedetails/:id' element={
           <>
             <h1>Recipe Details page</h1></>
         }>
