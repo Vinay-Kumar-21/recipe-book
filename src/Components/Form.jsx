@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-function Form({ setForm, setFormData, formData }) {
-    function handleSubmit() {
+function Form({ setForm, setRecipeList, recipeList }) {
+    const [formData, setFormData] = useState({});
+    function handleSubmit(e) {
+        e.preventDefault();
+
+        setRecipeList((prev) => {
+            return [formData, ...prev];
+        })
         setForm(false);
     }
 
@@ -11,6 +17,7 @@ function Form({ setForm, setFormData, formData }) {
             [e.target.name]: e.target.value
         })
     }
+
     return (
         <>
             <div className='flex flex-col justify-center h-3/6 w-3/6 bg-gray-500 '>
@@ -29,7 +36,7 @@ function Form({ setForm, setFormData, formData }) {
                     <textarea placeholder='Enter required ingredients' className='w-3/5' onChange={handleInputChange} name="ingredients"></textarea>
 
                     <label className='font-bold text-xl'>Description</label>
-                    <textarea placeholder='Enter a brief decsription' className='w-3/5' onChange={handleInputChange} name="descripition"></textarea>
+                    <textarea placeholder='Enter a brief decsription' className='w-3/5' onChange={handleInputChange} name="description"></textarea>
 
                     <label className='font-bold'>Image URL:</label>
                     <textarea placeholder='Enter a img url' className='w-3/5' onChange={handleInputChange} name="image"></textarea>

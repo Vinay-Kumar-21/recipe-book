@@ -11,7 +11,7 @@ function Recipe({ recipes }) {
                     <p>{recipes.description}</p>
                     <div className='pt-2.5 flex'>
                         {
-                            Array(recipes.rating)
+                            Array(Number(recipes.rating))
                                 .fill()
                                 .map((_) => (
                                     <p>⭐</p>

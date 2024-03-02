@@ -6,7 +6,7 @@ import Form from './Form'
 
 function HomePage() {
     const [isFormOpen, setForm] = useState(false);
-    const [formData, setFormData] = useState({});
+    const [recipeList, setRecipeList] = useState([]);
     // const recipes = {
     //     title: "Chicken Biryani",
     //     rating: 5,
@@ -18,8 +18,8 @@ function HomePage() {
     function handlePlusBtn() {
         setForm(true);
     }
+    console.log(recipeList);
 
-    console.log(formData);
 
     return (
         <>
@@ -28,20 +28,11 @@ function HomePage() {
                 <h1>🌟Let's create some Delicious Recipes🌟</h1>
             </div>
 
-            <div>
-                {/* recipes */}
-                <Recipe recipes={{
-                    // title: "Chicken Biryani",
-                    // rating: 5,
-                    // ingredients: [],
-                    // image: 'https://media.istockphoto.com/id/1345624336/photo/chicken-biriyani.jpg?s=612x612&w=0&k=20&c=adU_N0P-1SKMQLZu5yu7aPknfLLgbViI8XILqLP92A4=',
-                    // description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
-                    formData
-                }} />
-                {/* <Recipe recipes={recipes} />
-                <Recipe recipes={recipes} />
-                <Recipe recipes={recipes} /> */}
-            </div>
+
+            {/* recipe page */}
+            {recipeList.map((recipe) => {
+                return <Recipe recipes={recipe} />
+            })}
 
             {/* plus btn to add recipes from user */}
             <div className="fixed bottom-0 right-0 m-4">
@@ -50,7 +41,7 @@ function HomePage() {
                 </div>
             </div>
 
-            {isFormOpen && (<Form setForm={setForm} setFormData={setFormData} formData={formData} />)}
+            {isFormOpen && (<Form setForm={setForm} setRecipeList={setRecipeList} recipeList={recipeList} />)}
 
         </>
     )
