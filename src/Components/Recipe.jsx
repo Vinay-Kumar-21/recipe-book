@@ -3,7 +3,7 @@ import React from 'react'
 function Recipe({ recipes }) {
     return (
         <>
-            <div className='bg-gray-200 flex m-2.5 '>
+            <div className='bg-gray-100 flex m-2.5 '>
                 <img src={recipes.image} className='h-64 w-60 rounded-2xl mr-2' />
 
                 <div className='items-center'>
