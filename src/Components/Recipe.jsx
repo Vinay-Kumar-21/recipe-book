@@ -1,7 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import RecipeDetail from './RecipeDetail'
 
 function Recipe({ recipes }) {
+
+
 
     return (
         <>
@@ -23,9 +26,12 @@ function Recipe({ recipes }) {
                 </div>
 
                 <div className='self-end ml-auto mb-2'>
-                    <Link to={`/recipedetails/${recipes.id}`}>
-                        <button className=' border border-solid bg-orange-400 border-black px-2 h-8 mr-2'>How to Make</button>
+                    <Link to={`/recipedetails/${recipes.id}/${recipes.title}`
+                    } state={{ recipes }}>
+                        <button className=' border border-solid bg-orange-400 border-black px-2 h-8 mr-2 ' >How to Make</button>
                     </Link>
+
+
 
                     <button className=' border border-solid bg-orange-400 border-black px-2 h-8'>Delete</button>
                 </div>

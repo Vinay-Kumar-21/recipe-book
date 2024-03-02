@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Header from './Header'
 import Recipe from './Recipe'
 import Form from './Form'
@@ -20,7 +20,13 @@ function HomePage() {
     }
     console.log(recipeList);
 
+    useEffect(() => {
+        //get recipelist from local storage 7 set list
+    }, [])
 
+    useEffect(() => {
+        //update the storage
+    }, [recipeList])
 
     return (
         <>
