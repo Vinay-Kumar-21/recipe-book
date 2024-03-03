@@ -7,6 +7,7 @@ import Form from './Form'
 function HomePage() {
     const [isFormOpen, setForm] = useState(false);
     const [recipeList, setRecipeList] = useState([]);
+    const [search, setSearch] = useState("");
     // const recipes = {
     //     title: "Chicken Biryani",
     //     rating: 5,
@@ -19,7 +20,6 @@ function HomePage() {
         setForm(true);
     }
     console.log(recipeList);
-
 
 
     useEffect(() => {
@@ -39,14 +39,16 @@ function HomePage() {
 
     return (
         <>
-            <Header />
+            <Header setSearch={setSearch} search={search} />
             <div className='text-center pt-2 font-bold text-2xl italic text-violet-700'>
                 <h1>🌟Let's create some Delicious Recipes🌟</h1>
             </div>
 
 
             {/* recipes page */}
-            {recipeList.map((recipe) => {
+            {recipeList.filter((obj) => {
+                return obj.title.toLowerCase().includes(search.toLocaleLowerCase());
+            }).map((recipe) => {
                 return <Recipe recipes={recipe} />
             })}
 

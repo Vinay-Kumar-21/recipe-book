@@ -3,7 +3,6 @@ import { useLocation } from 'react-router'
 
 function RecipeDetail() {
     const state = useLocation();
-    console.log(state.state.recipes);
 
 
     return (

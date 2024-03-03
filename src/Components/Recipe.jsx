@@ -4,7 +4,7 @@ import RecipeDetail from './RecipeDetail'
 
 function Recipe({ recipes }) {
     function handleDeleteButton(e) {
-        console.log(e);
+        //console.log(e);
     }
 
     return (
