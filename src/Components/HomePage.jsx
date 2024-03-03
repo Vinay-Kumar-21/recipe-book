@@ -8,13 +8,6 @@ function HomePage() {
     const [isFormOpen, setForm] = useState(false);
     const [recipeList, setRecipeList] = useState([]);
     const [search, setSearch] = useState("");
-    // const recipes = {
-    //     title: "Chicken Biryani",
-    //     rating: 5,
-    //     ingredients: [],
-    //     image: 'https://media.istockphoto.com/id/1345624336/photo/chicken-biriyani.jpg?s=612x612&w=0&k=20&c=adU_N0P-1SKMQLZu5yu7aPknfLLgbViI8XILqLP92A4=',
-    //     description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
-    // }
 
     function handlePlusBtn() {
         setForm(true);

@@ -8,7 +8,7 @@ function Form({ setForm, setRecipeList, recipeList }) {
         e.preventDefault();
 
         setRecipeList((prev) => {
-            return [formData, ...prev];
+            return [...prev, formData];
         })
         setForm(false);
     }

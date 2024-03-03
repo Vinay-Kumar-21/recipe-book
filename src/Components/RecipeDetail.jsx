@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useLocation } from 'react-router'
 
 function RecipeDetail() {
     const state = useLocation();
 
+    const [formOpen, setFormOpen] = useState(false);
+
+    function handleEditBtn() {
+        //setFormOpen(true);
+    }
 
     return (
         <>
@@ -21,13 +26,15 @@ function RecipeDetail() {
                     }
                 </div>
 
-                <p className='text-xl mt-2'>Ingredients: {state.state.recipes.ingredients
+                <h1 className='font-bold text-2xl mt-2'>Ingredients</h1>
+                <p className='text-xl mt-2'> {state.state.recipes.ingredients
                 }</p>
 
-                <p className='text-xl mt-2'>Process : {state.state.recipes.making}</p>
+                <h1 className='font-bold text-2xl'>Process</h1>
+                <p className='text-xl mt-2'> {state.state.recipes.making}</p>
 
                 <div className="fixed bottom-0 right-0 m-4">
-                    <div className="bg-black rounded-full w-16 h-16 flex items-center justify-center text-white text-3xl cursor-pointer" >
+                    <div className="bg-black rounded-full w-16 h-16 flex items-center justify-center text-white text-3xl cursor-pointer" onClick={handleEditBtn}>
                         <i class="fa-solid fa-pencil"></i>
                     </div>
                 </div>
