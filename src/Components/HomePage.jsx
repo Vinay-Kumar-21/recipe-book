@@ -20,13 +20,22 @@ function HomePage() {
     }
     console.log(recipeList);
 
+
+
     useEffect(() => {
         //get recipelist from local storage 7 set list
+        const newRecipelist = JSON.parse(localStorage.getItem('recipeList'));
+        if (newRecipelist) {
+            setRecipeList(newRecipelist);
+        }
     }, [])
 
     useEffect(() => {
         //update the storage
+        localStorage.setItem('recipeList', JSON.stringify(recipeList));
     }, [recipeList])
+
+
 
     return (
         <>
@@ -36,7 +45,7 @@ function HomePage() {
             </div>
 
 
-            {/* recipe page */}
+            {/* recipes page */}
             {recipeList.map((recipe) => {
                 return <Recipe recipes={recipe} />
             })}
