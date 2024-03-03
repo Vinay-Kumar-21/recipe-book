@@ -26,7 +26,7 @@ function HomePage() {
 
 
     useEffect(() => {
-        //get recipelist from local storage 7 set list
+        //get recipelist from local storage & set list
         const newRecipelist = JSON.parse(localStorage.getItem('recipeList'));
         if (newRecipelist) {
             setRecipeList(newRecipelist);

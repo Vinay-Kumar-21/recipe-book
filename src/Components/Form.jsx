@@ -23,7 +23,7 @@ function Form({ setForm, setRecipeList, recipeList }) {
 
     return (
         <>
-            <div className='flex flex-col justify-center h-3/6 w-3/6 bg-gray-500 '>
+            <div className='flex flex-col justify-center h-3/6 w-3/6 bg-gray-500 ml-80'>
                 <h1 className='font-extrabold text-center'> Add a New Recipe</h1>
                 <form className='flex flex-col items-center m-4 '>
                     <label className='font-bold text-xl'>Title</label>
