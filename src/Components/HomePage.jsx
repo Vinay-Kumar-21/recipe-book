@@ -21,6 +21,16 @@ function HomePage() {
     }
     console.log(recipeList);
 
+    function handleDeleteButton(obj) {
+        //console.log(e);
+        const newRecipelist = recipeList.filter((rcp) => {
+            return obj.id !== rcp.id;
+        })
+
+        localStorage.setItem("recipeList", JSON.stringify(newRecipelist));
+        setRecipeList(newRecipelist);
+    }
+
 
     useEffect(() => {
         //get recipelist from local storage 7 set list
@@ -49,7 +59,7 @@ function HomePage() {
             {recipeList.filter((obj) => {
                 return obj.title.toLowerCase().includes(search.toLocaleLowerCase());
             }).map((recipe) => {
-                return <Recipe recipes={recipe} />
+                return <Recipe recipes={recipe} handleDeleteButton={handleDeleteButton} />
             })}
 
             {/* plus btn to add recipes from user */}
