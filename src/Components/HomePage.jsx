@@ -12,7 +12,7 @@ function HomePage() {
     function handlePlusBtn() {
         setForm(true);
     }
-    console.log(recipeList);
+    // console.log(recipeList);
 
     function handleDeleteButton(obj) {
         //console.log(e);
